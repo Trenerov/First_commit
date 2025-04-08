@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    <h1> Первое Flask приложение </h1> 
+    <p> Это простое веб-приложение, созданное с использованием микрофреймворка Flask на языке Python.
+        Оно демонстрирует базовые принципы работы Flask и является отличной отправной точкой для изучения веб-разработки.
+    </p>
+    <img src="{{ url_for('static', filename='img/cats.png') }}">
+</body>
+</html>
