@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои навыки программирования</title>
+    <title>{% block title %}Мои навыки программирования{% endblock %}</title>
     <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
@@ -12,7 +12,19 @@
       <h1>Мои навыки программирования</h1>
       <p>Основано на пройденных темах курса</p>
     </header>
-  
+
+    <nav class="center-button">
+      <a href="{{ url_for('index') }}">
+        <button class="nav-button">Главная</button>
+      </a>
+      <a href="{{ url_for('notes') }}">
+          <button class="diary-button">
+              Дневник программиста
+          </button>
+      </a>
+  </nav>
+
+    {% block content %}
     <article>
       <section>
         <h2>1. Основы программирования</h2>
@@ -83,8 +95,8 @@
         <tbody>
           <tr>
             <td>100%</td>
-            <td>90%</td>
-            <td></td>
+            <td>100%</td>
+            <td>100%</td>
             <td></td>
             <td></td>
             <td></td>
@@ -93,8 +105,8 @@
           </tr>
           <tr>
             <td>100%</td>
-            <td>85%</td>
-            <td></td>
+            <td>100%</td>
+            <td>100%</td>
             <td></td>
             <td></td>
             <td></td>
@@ -104,7 +116,7 @@
           <tr>
             <td>Понял структуру Flask-приложений, запуск, маршруты</td>
             <td>Освоены базовая вёрстка, селекторы, подключение стилей</td>
-            <td></td>
+            <td>Изучил шаблоны и формы в Jinja2</td>
             <td></td>
             <td></td>
             <td></td>
@@ -114,9 +126,8 @@
         </tbody>
       </table>
     </section>
-
     </article>
-  
+    {% endblock %}
     <footer>
       <p>&copy; 2025 Мои навыки | Учебный курс по программированию</p>
     </footer>
